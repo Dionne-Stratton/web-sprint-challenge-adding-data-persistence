@@ -1,11 +1,15 @@
 const express = require("express");
-// const ProjectRouter = require("./routing/projectRouter");
 const server = express();
-server.use(express.json());
-// server.use("/projects", ProjectRouter);
+const resourceRouter = require("./resource/router");
+const projectRouter = require("./project/router");
 
-server.get("/", (req, res) => {
-  res.status(200).json({ message: "server listening" });
+server.use(express.json());
+
+server.use("/api/resources", resourceRouter);
+server.use("/api/projects", projectRouter);
+
+server.get("/", (_, res) => {
+  res.status(200).json({ message: "server running" });
 });
 
 module.exports = server;

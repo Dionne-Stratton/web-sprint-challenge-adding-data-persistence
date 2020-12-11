@@ -12,11 +12,5 @@ exports.seed = function (knex, Promise) {
       completed: 0,
       project_id: 2,
     },
-    {
-      task_description: "task3",
-      task_notes: "testing",
-      completed: 0,
-      project_id: 3,
-    },
   ]);
 };

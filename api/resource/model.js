@@ -1,7 +1,7 @@
 const db = require("../../data/dbConfig");
 
 module.exports = {
-  getResource() {
+  getAll() {
     return db("resources").select("*");
   },
   getById(id) {

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Model = require("./model");
 
-router.get("/resources", (req, res) => {
+router.get("/", (req, res) => {
   Model.getResource()
     .then((project) => {
       res.status(200).json(project);

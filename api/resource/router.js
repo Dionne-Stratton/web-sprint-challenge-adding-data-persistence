@@ -2,10 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Model = require("./model");
 
-router.get("/", (req, res) => {
-  Model.getAll().then((data) => {
-    res.status(200).json(data);
-  });
+router.get("/resources", (req, res) => {
+  Model.getResource()
+    .then((project) => {
+      res.status(200).json(project);
+    })
+    .catch((err) => {
+      res.status(500).json({ message: "Failed to get Resources" });
+    });
 });
 
 router.post("/", (req, res) => {

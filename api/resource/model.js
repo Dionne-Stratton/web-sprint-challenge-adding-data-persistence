@@ -1,8 +1,8 @@
 const db = require("../../data/dbConfig");
 
 module.exports = {
-  getAll() {
-    return db("resources");
+  getResource() {
+    return db("resources").select("*");
   },
   getById(id) {
     return db("resources").where("id", id).first();
